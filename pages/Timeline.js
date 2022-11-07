@@ -10,12 +10,10 @@ const Timeline = ({ playlists }) => {
 
       {playlistNames.map((playlistName) => {
         const videos = playlists[playlistName];
-        console.log(playlistName);
-        console.log(videos);
         return (
-          <section>
+          <section key={playlistName}>
             <h2>{playlistName}</h2>
-            <div>
+            <div key={playlistName}>
               {videos.map((video) => {
                 return (
                   <a href={video.url}>
