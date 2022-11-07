@@ -16,7 +16,7 @@ const Home = () => {
 
         <Menu />
         <Header />
-        <Timeline playlists={config.playlists} />
+        <Timeline />
       </div>
     </>
   )

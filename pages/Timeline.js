@@ -1,8 +1,10 @@
 import React from 'react'
 import { StyledTimeline } from '../src/components/timeline'
+import config from '../config.json'
 
 
-const Timeline = ({ playlists }) => {
+const Timeline = () => {
+  const playlists = config.playlists
   const playlistNames = Object.keys(playlists)
 
   return (
