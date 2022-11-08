@@ -10,7 +10,7 @@ const Timeline = ({ searchValue }) => {
   return (
     <StyledTimeline>
 
-      {playlists && playlistNames.map((playlistName) => {
+      {playlists ? (playlistNames.map((playlistName) => {
         const videos = playlists[playlistName];
         return (
           <section key={playlistName}>
@@ -30,11 +30,12 @@ const Timeline = ({ searchValue }) => {
                     </span>
                   </a>
                 )
-              })}
+              }) 
+            }
             </div>
           </section>
         )
-      })}
+      })) : (<h2>Carregando...</h2>)}
     </StyledTimeline>
   )
 }
