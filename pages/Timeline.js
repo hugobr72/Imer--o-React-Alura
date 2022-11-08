@@ -3,7 +3,8 @@ import { StyledTimeline } from '../src/components/timeline'
 import config from '../config.json'
 
 
-const Timeline = ({ playlists, searchValue }) => {
+const Timeline = ({ searchValue }) => {
+  playlists = config.playlists
   const playlistNames = Object.keys(playlists)
 
   return (
