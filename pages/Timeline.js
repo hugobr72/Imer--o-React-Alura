@@ -9,7 +9,8 @@ const Timeline = (props) => {
   
   useEffect(() => {
     const play = async () => {
-    await setPlaylistName(Object.keys(playlists))
+    await setPlaylists(props.playlists)
+    await setPlaylistName(Object.keys(config.playlists))
   }
   play();
   },[props])
