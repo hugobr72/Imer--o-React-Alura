@@ -18,9 +18,10 @@ const Timeline = ({ searchValue, ...props }) => {
             <div key={playlistName}>
       
               {videos.filter((video) => {
-                const title = video.title.toLowerCase()
+                const title = video.title
+                const titleNormalized = title.toLowerCase()
                 const searchNormalized = searchValue.toLowerCase()
-                return title.includes(searchNormalized);
+                return titleNormalized.includes(searchNormalized);
               }).map((video) => {
                 return (
                   <a key={video.url} href={video.url}>
