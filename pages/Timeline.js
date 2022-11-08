@@ -1,16 +1,24 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { StyledTimeline } from '../src/components/timeline'
 import config from '../config.json'
 
 
 const Timeline = (props) => {
-  const playlists = useMemo(() => props.playlists)
-  const playlistNames = Object.keys(playlists)
+  const [playlistNames,setPlaylistName] = useState([])
+  const [playlists, setPlaylists] = useState(config.playlists)
+  
+  useEffect(() => {
+    const play = async () => {
+    await setPlaylistName(Object.keys(playlists))
+  }
+  play();
+  },[props])
+  
   
   return (
     <StyledTimeline>
 
-      {playlists ? (playlistNames.map((playlistName) => {
+      {playlistNames !== [] ? (playlistNames.map((playlistName) => {
         const videos = playlists[playlistName];
         return (
           <section key={playlistName}>
@@ -19,8 +27,8 @@ const Timeline = (props) => {
 
               {videos.filter((video) => {
                 const titleNormalized = video.title.toLowerCase();
-                const searchNormalized = props.searchValue.toLowerCase();
-                return titleNormalized.includes(searchNormalized);
+                const searchNormalized = props.searchValue && props.searchValue.toLowerCase();
+                return titleNormalized.includes(searchNormalized)
               }).map((video) => {
                 return (
                   <a key={video.url} href={video.url}>
