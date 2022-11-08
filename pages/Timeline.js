@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { StyledTimeline } from '../src/components/timeline'
 import config from '../config.json'
 
 
 const Timeline = ({ searchValue }) => {
-  const playlists = config.playlists
+  const playlists = useMemo(() => 
+    config.playlists
+  )
   const playlistNames = Object.keys(playlists)
-
+  console.log(playlists)
   return (
     <StyledTimeline>
 
