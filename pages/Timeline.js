@@ -3,12 +3,13 @@ import { StyledTimeline } from '../src/components/timeline'
 import config from '../config.json'
 
 
-const Timeline = ({ searchValue }) => {
+const Timeline = (props) => {
   const playlists = useMemo(() => 
     config.playlists
   )
   const playlistNames = Object.keys(playlists)
-  console.log(playlists)
+  
+  
   return (
     <StyledTimeline>
 
@@ -21,7 +22,7 @@ const Timeline = ({ searchValue }) => {
 
               {videos.filter((video) => {
                 const titleNormalized = video.title.toLowerCase();
-                const searchNormalized = searchValue.toLowerCase();
+                const searchNormalized = props.searchValue.toLowerCase();
                 return titleNormalized.includes(searchNormalized);
               }).map((video) => {
                 return (
