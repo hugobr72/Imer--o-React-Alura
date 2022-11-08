@@ -5,8 +5,6 @@ import Menu from '../src/components/Menu'
 import Timeline from './Timeline'
 import { useState } from 'react'
 
-const valor = ''
-
 
 const Home = () => {
 
