@@ -19,8 +19,8 @@ const Timeline = ({ searchValue, ...props }) => {
       
               {videos.filter((video) => {
                 const title = video.title
-                const titleNormalized = title.toLowerCase()
-                const searchNormalized = searchValue.toLowerCase()
+                const titleNormalized = title.toLowerCase();
+                const searchNormalized = searchValue.toLowerCase();
                 return titleNormalized.includes(searchNormalized);
               }).map((video) => {
                 return (
