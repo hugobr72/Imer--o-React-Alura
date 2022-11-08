@@ -4,7 +4,7 @@ import config from '../config.json'
 
 
 const Timeline = ({ searchValue }) => {
-  playlists = config.playlists
+  const playlists = config.playlists
   const playlistNames = Object.keys(playlists)
 
   return (
