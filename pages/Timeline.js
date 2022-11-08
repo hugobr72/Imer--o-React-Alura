@@ -4,11 +4,8 @@ import config from '../config.json'
 
 
 const Timeline = (props) => {
-  const playlists = useMemo(() => 
-    config.playlists
-  )
+  const playlists = useMemo(() => props.playlists)
   const playlistNames = Object.keys(playlists)
-  
   
   return (
     <StyledTimeline>
