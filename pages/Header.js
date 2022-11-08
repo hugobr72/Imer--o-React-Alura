@@ -2,8 +2,6 @@ import styled from 'styled-components'
 import config from '../config.json'
 
 const StyledHeader = styled.div`
-  padding-top: 54px;
-
   img {
     width: 80px;
     height: 80px;
@@ -20,9 +18,16 @@ const StyledHeader = styled.div`
   }
 `;
 
+const StyledBanner = styled.div`
+  background: url(${config.bg})center center no-repeat ;
+  height: 230px;
+  width: 100%;
+`;
+
 const Header = () => {
   return (
     <StyledHeader>
+      <StyledBanner />
       <section className='user-info'>
         <img src={`https://github.com/${config.github}.png`} alt={config.name} />
         <div>
