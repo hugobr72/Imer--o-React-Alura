@@ -10,7 +10,7 @@ const Timeline = ({ searchValue }) => {
   return (
     <StyledTimeline>
 
-      {playlistNames.map((playlistName) => {
+      {playlists && playlistNames.map((playlistName) => {
         const videos = playlists[playlistName];
         return (
           <section key={playlistName}>
@@ -18,8 +18,7 @@ const Timeline = ({ searchValue }) => {
             <div key={playlistName}>
 
               {videos.filter((video) => {
-                const title = video.title
-                const titleNormalized = title.toLowerCase();
+                const titleNormalized = video.title.toLowerCase();
                 const searchNormalized = searchValue.toLowerCase();
                 return titleNormalized.includes(searchNormalized);
               }).map((video) => {
