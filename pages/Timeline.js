@@ -3,8 +3,8 @@ import { StyledTimeline } from '../src/components/timeline'
 import config from '../config.json'
 
 
-const Timeline = ({ searchValue, ...props }) => {
-  const playlists = config.playlists
+const Timeline = (props) => {
+  const playlists = props.playlists
   const playlistNames = Object.keys(playlists)
 
   return (
@@ -20,7 +20,7 @@ const Timeline = ({ searchValue, ...props }) => {
               {videos.filter((video) => {
                 const title = video.title
                 const titleNormalized = title.toLowerCase();
-                const searchNormalized = searchValue.toLowerCase();
+                const searchNormalized = props.searchValue.toLowerCase();
                 return titleNormalized.includes(searchNormalized);
               }).map((video) => {
                 return (
