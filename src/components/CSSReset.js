@@ -9,6 +9,8 @@ export const CSSReset = createGlobalStyle`
   }
   body {
     font-family: sans-serif;
+    background-color: ${({theme}) => theme.backgroundBase};
+    color: ${({theme}) => theme.textColorBase};
   }
 
   html {
@@ -34,5 +36,13 @@ export const CSSReset = createGlobalStyle`
     &:focus {
       opacity: .5;
     }
+
+  ::-webkit-scrollbar{
+    background-color: ${({theme}) => theme.backgroundBase};
+  }
+
+  ::-webkit-scrollbar-button{
+    background-color: ${({theme}) => theme.backgroundBase};
+  }
   }
 `;
